@@ -23,7 +23,14 @@ const Form = () => {
         try {
             setloading(true);
             // console.log(token, id);
-            const {data} = await axios(`${baseURL}/verify-token?token=${token}&id=${id}` )
+            const config = {
+                headers: {
+                  "Access-Control-Allow-Origin": "*",
+                  "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+                  withCredentials: true
+                }
+              }
+            const {data} = await axios(`${baseURL}/verify-token?token=${token}&id=${id}`, config )
             //    console.log(data);
             
             //    if(!data.success) return setInvalidUser(data.success);
