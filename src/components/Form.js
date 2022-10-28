@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import axios from "axios";
 
-const baseURL = "https://authappserver.cyclic.app"
+const baseURL = "https://authapp-backend.onrender.com"
 const Form = () => {
     const location = useLocation();
     const navigate = useNavigate();
