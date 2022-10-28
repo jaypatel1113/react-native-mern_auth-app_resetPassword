@@ -35,14 +35,16 @@ const Form = () => {
             
             //    if(!data.success) return setInvalidUser(data.success);
             setloading(false);
-           
+            
         } catch (error) {
+            setloading(false);
             if(error?.response?.data) {
                 const {data} = error.response;
                 console.log(error.response.data) 
                 if(!data.success) return setInvalidUser(data.message);
             }
             console.log(error);
+            setInvalidUser(error.message);
         }
         
     }
