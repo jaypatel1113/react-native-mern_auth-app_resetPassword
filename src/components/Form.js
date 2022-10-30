@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import axios from "axios";
 
-const baseURL = "https://authapp-backend.onrender.com"
+const baseURL = "https://authappserver.cyclic.app"
 const Form = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -40,10 +40,10 @@ const Form = () => {
             setloading(false);
             if(error?.response?.data) {
                 const {data} = error.response;
-                console.log(error.response.data) 
+                // console.log(error.response.data) 
                 if(!data.success) return setInvalidUser(data.message);
             }
-            console.log(error);
+            // console.log(error);
             setInvalidUser(error.message);
         }
         
@@ -76,10 +76,10 @@ const Form = () => {
             if(error?.response?.data) {
                 setloading(false)
                 const {data} = error.response;
-                console.log(error.response.data) 
+                // console.log(error.response.data) 
                 if(!data.success) return setError(data.message);
             }
-            console.log(error);
+            // console.log(error);
         }
     }
 
